@@ -1,17 +1,17 @@
 def nyc_pigeon_organizer(data)
-  list = {}
-  data.each do |key, value|
+  pigeon_list = {}
+  data.each do |key, value| #key = c,g,l value = {}
     value.each do |descriptor, array|
       array.each do |name|
-        if list[name] == nil 
-          list[name] = {}
+        if pigeon_list[name] == nil 
+          pigeon_list[name] = {}
         end
-        if list[name][key] == nil 
-          list[name][key] = []
+        if pigeon_list[name][key] == nil 
+          pigeon_list[name][key] = []
         end
-        list[name][key] << descriptor.to_s 
+        pigeon_list[name][key] << descriptor.to_s 
       end
     end
   end
-  list
+  pigeon_list
 end
