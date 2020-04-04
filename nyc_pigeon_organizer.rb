@@ -1,19 +1,17 @@
 def nyc_pigeon_organizer(data)
-  pigeon_list = {}
+  list = {}
   data.each do |key, value|
-    value.each do |describe, array| 
-      array.each do |name| 
-        if pigeon_list.has_key?(name)
-          if pigeon_list[name].has_key?(key)
-            pigeon_list[name][key] << describe.to_s
-          else
-            pigeon_list[name][key] = [describe.to_s]
-          end
-        else
-          pigeon_list[name] = {key => [describe.to_s]} #describe was symbol before so turn it to string
+    value.each do |descriptor, array|
+      array.each do |name|
+        if list[name] == nil 
+          list[name] = {}
         end
+        if list[name][key] == nil 
+          list[name][key] = []
+        end
+        list[name][key] << descriptor.to_s 
       end
     end
   end
-  pigeon_list
+  list
 end
