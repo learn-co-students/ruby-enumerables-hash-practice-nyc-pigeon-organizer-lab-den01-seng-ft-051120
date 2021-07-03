@@ -52,7 +52,7 @@ Iterate over the hash above, collecting each pigeon by name and insert it as the
 `:lives` keys assigned to arrays of info about that particular pigeon. Your
 output should look something like the hash below:
 
-```ruby
+```rubyd
 pigeon_list = {
   "Theo" => {
     :color => ["purple", "grey"],
